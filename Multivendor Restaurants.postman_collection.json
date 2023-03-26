@@ -1,0 +1,523 @@
+{
+	"info": {
+		"_postman_id": "e1e96436-7e3a-455b-bbe1-90fd8cc30547",
+		"name": "Multivendor Restaurants",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Yousuf Kalim",
+									"type": "text"
+								},
+								{
+									"key": "cnic",
+									"value": "123456789123",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yousufkalim@outlook.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/yousuf/Pictures/IMG_7437.JPG"
+								},
+								{
+									"key": "number",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/users/6173ac62c87f90eeb6d82f21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"6173ac62c87f90eeb6d82f21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/users/6173ac9cc87f90eeb6d82f25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"6173ac9cc87f90eeb6d82f25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Mian Yousuf",
+									"type": "text"
+								},
+								{
+									"key": "cnic",
+									"value": "123456789123",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yousuf@falconit.com.pk",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "number",
+									"value": "1234567890",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/6173ac62c87f90eeb6d82f21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"6173ac62c87f90eeb6d82f21"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Managers",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Yousuf Kalim\",\n    \"phone\": \"03347070725\",\n    \"email\": \"yousufkalim@outlook.com\",\n    \"password\": \"12345678\",\n    \"confirm_password\": \"12345678\",\n    \"restaurant\": {\n        \"name\": \"Yousuf Broast\",\n        \"email\": \"info@yousufbroast.com\",\n        \"zipcode\": \"54000\",\n        \"city\": \"Lahore\",\n        \"country\": \"Pakistan\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/managers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"managers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtYW5hZ2VyIjp7InJvbGUiOiJtYW5hZ2VyIiwiX2lkIjoiNjI0ZWE1Yzc4NWYyMWE1YWYxNjEyNmQ3IiwibmFtZSI6IllvdXN1ZiBLYWxpbSIsInBob25lIjoiMDMzNDcwNzA3MjUiLCJlbWFpbCI6InlvdXN1ZmthbGltQG91dGxvb2suY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkSk9ON2Nya1E5MzNnb2Zwb2tMT25DLnhvbjh0by92Tkw3US5NZndEcktxRmlJbk9sL1hJV1ciLCJyZXN0YXVyYW50IjoiNjI0ZWE1Yzc4NWYyMWE1YWYxNjEyNmQ1IiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0wN1QwODo1MDoxNS44NTZaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0wN1QwODo1MDoxNS44NTZaIiwiX192IjowfSwiaWF0IjoxNjQ5MzIxNzY0LCJleHAiOjE2NDk2ODE3NjR9.xv5DGNP_fSMVZgBXPfvhJA3h5pPo9Q_JM2uUZXy8_O0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Yousuf Kalim\",\n    \"phone\": \"03347070725\",\n    \"email\": \"yousuf@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/managers/624ea5c785f21a5af16126d7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"managers",
+								"624ea5c785f21a5af16126d7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/users/6173ac62c87f90eeb6d82f21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"6173ac62c87f90eeb6d82f21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtYW5hZ2VyIjp7InJvbGUiOiJtYW5hZ2VyIiwiX2lkIjoiNjI0ZWE1Yzc4NWYyMWE1YWYxNjEyNmQ3IiwibmFtZSI6IllvdXN1ZiBLYWxpbSIsInBob25lIjoiMDMzNDcwNzA3MjUiLCJlbWFpbCI6InlvdXN1ZmthbGltQG91dGxvb2suY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkSk9ON2Nya1E5MzNnb2Zwb2tMT25DLnhvbjh0by92Tkw3US5NZndEcktxRmlJbk9sL1hJV1ciLCJyZXN0YXVyYW50IjoiNjI0ZWE1Yzc4NWYyMWE1YWYxNjEyNmQ1IiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0wN1QwODo1MDoxNS44NTZaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0wN1QwODo1MDoxNS44NTZaIiwiX192IjowfSwiaWF0IjoxNjQ5MzIxNzY0LCJleHAiOjE2NDk2ODE3NjR9.xv5DGNP_fSMVZgBXPfvhJA3h5pPo9Q_JM2uUZXy8_O0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/managers/624ea5c785f21a5af16126d7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"managers",
+								"624ea5c785f21a5af16126d7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "yousuf@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/managers/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"managers",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkAuth",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtYW5hZ2VyIjp7InJvbGUiOiJtYW5hZ2VyIiwiX2lkIjoiNjI0ZWE1Yzc4NWYyMWE1YWYxNjEyNmQ3IiwibmFtZSI6IllvdXN1ZiBLYWxpbSIsInBob25lIjoiMDMzNDcwNzA3MjUiLCJlbWFpbCI6InlvdXN1ZmthbGltQG91dGxvb2suY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkSk9ON2Nya1E5MzNnb2Zwb2tMT25DLnhvbjh0by92Tkw3US5NZndEcktxRmlJbk9sL1hJV1ciLCJyZXN0YXVyYW50IjoiNjI0ZWE1Yzc4NWYyMWE1YWYxNjEyNmQ1IiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0wN1QwODo1MDoxNS44NTZaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0wN1QwODo1MDoxNS44NTZaIiwiX192IjowfSwiaWF0IjoxNjQ5MzIxNzY0LCJleHAiOjE2NDk2ODE3NjR9.xv5DGNP_fSMVZgBXPfvhJA3h5pPo9Q_JM2uUZXy8_O0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/managers/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"managers",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtYW5hZ2VyIjp7InJvbGUiOiJtYW5hZ2VyIiwiX2lkIjoiNjI0ZWE1Yzc4NWYyMWE1YWYxNjEyNmQ3IiwibmFtZSI6IllvdXN1ZiBLYWxpbSIsInBob25lIjoiMDMzNDcwNzA3MjUiLCJlbWFpbCI6InlvdXN1ZmthbGltQG91dGxvb2suY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkSk9ON2Nya1E5MzNnb2Zwb2tMT25DLnhvbjh0by92Tkw3US5NZndEcktxRmlJbk9sL1hJV1ciLCJyZXN0YXVyYW50IjoiNjI0ZWE1Yzc4NWYyMWE1YWYxNjEyNmQ1IiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0wN1QwODo1MDoxNS44NTZaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0wN1QwODo1MDoxNS44NTZaIiwiX192IjowfSwiaWF0IjoxNjQ5MzIxNzY0LCJleHAiOjE2NDk2ODE3NjR9.xv5DGNP_fSMVZgBXPfvhJA3h5pPo9Q_JM2uUZXy8_O0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/managers/624ea5c785f21a5af16126d7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"managers",
+								"624ea5c785f21a5af16126d7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtYW5hZ2VyIjp7InJvbGUiOiJtYW5hZ2VyIiwiX2lkIjoiNjI0ZWE1Yzc4NWYyMWE1YWYxNjEyNmQ3IiwibmFtZSI6IllvdXN1ZiBLYWxpbSIsInBob25lIjoiMDMzNDcwNzA3MjUiLCJlbWFpbCI6InlvdXN1ZmthbGltQG91dGxvb2suY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkSk9ON2Nya1E5MzNnb2Zwb2tMT25DLnhvbjh0by92Tkw3US5NZndEcktxRmlJbk9sL1hJV1ciLCJyZXN0YXVyYW50IjoiNjI0ZWE1Yzc4NWYyMWE1YWYxNjEyNmQ1IiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0wN1QwODo1MDoxNS44NTZaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0wN1QwODo1MDoxNS44NTZaIiwiX192IjowfSwiaWF0IjoxNjQ5MzIxNzY0LCJleHAiOjE2NDk2ODE3NjR9.xv5DGNP_fSMVZgBXPfvhJA3h5pPo9Q_JM2uUZXy8_O0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPassword",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/managers/password/624ea5c785f21a5af16126d7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"managers",
+								"password",
+								"624ea5c785f21a5af16126d7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/managers/forgot/yousuf@gmail.com",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"managers",
+								"forgot",
+								"yousuf@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurants",
+			"item": [
+				{
+					"name": "Get restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurants/624ea5c785f21a5af16126d5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"624ea5c785f21a5af16126d5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Restaurant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"Yousuf Khan Broast\",\n        \"email\": \"info@yousufbroast.com\",\n        \"zipcode\": \"54000\",\n        \"city\": \"Lahore\",\n        \"country\": \"Pakistan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurants/624ea5c785f21a5af16126d5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"624ea5c785f21a5af16126d5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
